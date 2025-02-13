@@ -170,12 +170,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 0}
   followTransform: {fileID: 0}
-  moveWithKeyboad: 0
+  moveWithKeyboad: 1
   moveWithEdgeScrolling: 0
   moveWithMouseDrag: 0
   fastSpeed: 0.05
-  normalSpeed: 0.01
-  movementSensitivity: 1
+  normalSpeed: 0.25
+  movementSensitivity: 0.09
   edgeSize: 50
   cursorArrowUp: {fileID: 0}
   cursorArrowDown: {fileID: 0}
