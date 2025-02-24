@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 using static UnityEngine.UI.CanvasScaler;
 
 public class UnitSelectionManger : MonoBehaviour
@@ -80,7 +81,7 @@ public class UnitSelectionManger : MonoBehaviour
 
         }
 
-        if (unitsSelected.Count > 0)
+        if (unitsSelected.Count > 0 && AtleastOneOffensiveUnit(unitsSelected))
         {
             RaycastHit hit;
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -109,6 +110,19 @@ public class UnitSelectionManger : MonoBehaviour
             }
         }
     }
+
+    private bool AtleastOneOffensiveUnit(List<GameObject> unitsSelected)
+    {
+        foreach (GameObject unit in unitsSelected)
+        {
+            if (unit.GetComponent<AttackController>())
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private void MultiSelect(GameObject unit)
     {
         if (unitsSelected.Contains(unit) == false)
