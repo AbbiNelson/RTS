@@ -5,6 +5,12 @@ using UnityEngine;
 public class AttackController : MonoBehaviour
 {
     public Transform targetToAttack;
+
+    public Material idleStateMaterial;
+    public Material followStateMaterial;
+    public Material attackStateMaterial;
+
+
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
@@ -20,5 +26,20 @@ public class AttackController : MonoBehaviour
         {
             targetToAttack = null;
         }
+    }
+
+    public void SetIdleMaterial()
+    {
+        GetComponent<Renderer>().material = idleStateMaterial;
+    }
+
+    public void SetFollowMaterial()
+    {
+        GetComponent<Renderer>().material = followStateMaterial;
+    }
+
+    public void SetAttackMaterial()
+    {
+        GetComponent<Renderer>().material = attackStateMaterial;
     }
 }

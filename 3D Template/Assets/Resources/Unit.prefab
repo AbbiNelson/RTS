@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 8352268126080878018}
   - component: {fileID: 8558777466273919211}
   - component: {fileID: 4091820303599078718}
+  - component: {fileID: 5238419943028819755}
   m_Layer: 7
   m_Name: Unit
   m_TagString: Untagged
@@ -36,7 +37,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 32.52, y: 1.066, z: 27.45}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7470194120339894189}
@@ -155,6 +156,7 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 64
+  isCommandedToMove: 0
 --- !u!114 &8463918198250856426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +182,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetToAttack: {fileID: 0}
+  idleStateMaterial: {fileID: 2100000, guid: 5dda380ca61c91045a9885c0b16253c2, type: 2}
+  followStateMaterial: {fileID: 2100000, guid: 7851e27df22cd0f4aa6d7f2be6095eb1, type: 2}
+  attackStateMaterial: {fileID: 2100000, guid: a49b42149bd71b442b6c903a8b3e4583, type: 2}
 --- !u!95 &8352268126080878018
 Animator:
   serializedVersion: 7
@@ -250,6 +255,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &5238419943028819755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961994594626649941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58bcf36e18a5a2346815896d21822443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetToAttack: {fileID: 0}
+  idleStateMaterial: {fileID: 0}
+  followStateMaterial: {fileID: 0}
+  attackStateMaterial: {fileID: 0}
 --- !u!1 &6492719088995834915
 GameObject:
   m_ObjectHideFlags: 0
