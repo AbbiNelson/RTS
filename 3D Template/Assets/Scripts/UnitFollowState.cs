@@ -9,7 +9,7 @@ public class UnitFollowState : StateMachineBehaviour
 
     NavMeshAgent agent;
 
-    public float attackingDistance = 1f;
+    public float attackingDistance = 2f;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateinfo, int layerindex)
     {

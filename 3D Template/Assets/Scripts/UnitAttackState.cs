@@ -7,7 +7,7 @@ public class UnitAttackState : StateMachineBehaviour
     NavMeshAgent agent;
     AttackController attackController;
 
-    public float stopAttackingDistance = 1.2f;
+    public float stopAttackingDistance = 2.2f;
 
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -24,6 +24,10 @@ public class UnitAttackState : StateMachineBehaviour
             LookAtTarget();
 
             agent.SetDestination(attackController.targetToAttack.position);
+
+            var damageToInflict = attackController.unitDamage;
+
+            attackController.targetToAttack.GetComponent<Enemy>().ReceiveDamge(damageToInflict);
 
             float distanceFromTarget = Vector3.Distance(attackController.targetToAttack.position, animator.transform.position);
             if (distanceFromTarget > stopAttackingDistance || attackController.targetToAttack == null)

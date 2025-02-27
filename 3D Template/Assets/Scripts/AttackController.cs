@@ -9,6 +9,7 @@ public class AttackController : MonoBehaviour
     public Material idleStateMaterial;
     public Material followStateMaterial;
     public Material attackStateMaterial;
+    public int unitDamage;
 
 
     // Start is called before the first frame update
@@ -41,5 +42,18 @@ public class AttackController : MonoBehaviour
     public void SetAttackMaterial()
     {
         GetComponent<Renderer>().material = attackStateMaterial;
+    }
+
+    private void OnDrawGizmos()
+    {
+        //Follow
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, 10*0.5f);
+        //Attack
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, 2f);
+        //Stop
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, 2.2f);
     }
 }
